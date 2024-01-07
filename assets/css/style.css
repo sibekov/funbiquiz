@@ -6,9 +6,10 @@
     font-size: 150%;
     color: red;
     border: solid;
-    margin-top: 30%;
+    margin-top: 10%;
     background-color: black;
     text-align: center;
+    margin-bottom: 10%;
 }
 
 #counterspan {
@@ -18,7 +19,7 @@
     background-color: green;
     font-size: 150%;
     border-radius: 45%;
-    padding: 3%;
+    padding: 1%;
 
 }
 
@@ -37,6 +38,14 @@
     font-size: 150%;
     color: white;
     background: green;
+}
+
+.restart {
+    text-align: center;
+    background: green;
+    color: white;
+    border-radius: 45%;
+    margin: auto;
 }
 
 body {
