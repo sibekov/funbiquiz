@@ -5,7 +5,8 @@
 #gameoverdiv {
     font-size: 150%;
     color: red;
-    border: solid;
+    border: none;
+    outline: none;
     margin-top: 10%;
     background-color: black;
     text-align: center;
@@ -143,7 +144,7 @@ body {
 
 
 .mypress--red {
-    margin: 5%;
+    margin: 1%;
     color: red;
 }
 
@@ -171,7 +172,6 @@ body {
 
 #myouter {
     position: relative;
-
 
 }
 
