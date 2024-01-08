@@ -43,11 +43,15 @@
 
 .restart {
     text-align: center;
-    background: green;
-    color: white;
+    background: white;
+    color: black;
     border-radius: 45%;
     margin: auto;
+    border: solid;
 }
+
+
+
 
 body {
 

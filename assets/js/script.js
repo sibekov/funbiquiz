@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let newlist = [];
 let mylist = ['water?', 'a rock?', 'a tree?', 'a fish?', 'fire?'];
+
 function myrunGame(mygameType) {
     let charactor = mygameType;
 
@@ -41,6 +42,7 @@ function myrunGame(mygameType) {
     else if (newlist.length === 5 && counta > 0) {
         alert(`Congratulations you have finished the ${charactor} level !!!! `);
         winner();
+        console.log(newlist);
     }
     else {
         let operand = mylist.pop();
@@ -61,7 +63,9 @@ function myrunGame(mygameType) {
             alert(`unknown game type:${charactor}`);
             throw `unknown game type:${charactor}. Aborting!!!`;
         }
+
         mylist.unshift(operand);
+
     }
 }
 
@@ -77,7 +81,12 @@ function mycheckAnswer() {
     if (isCorrect) {
         alert("That is correct!!!...You Have Good Bible Study Habits!");
         myincreaseScore();
-        newlist.unshift(myAnswer[2]);
+        let ads = myAnswer[2];
+
+        if (newlist.includes(ads) !== true) {
+            newlist.unshift(ads);
+        }
+        console.log(newlist);
     }
     else {
         alert(`Sorry... you said ${myuserAnswer}.  But the correct answer is ${myAnswer[1]}`);
@@ -265,6 +274,20 @@ function mygameoverlevels() {
     document.getElementById("gameoverdiv").innerHTML = "...!!GAME OVER!!...     You need to play same person level and finish before moving on to a different person level...";
 
 }
+
+let tryer = getElementsByClass("restart");
+
+tryer.addEventListener("click", tryagain());
+
+function tryagain() {
+
+    location.reload();
+}
+
+
+
+
+
 
 
 /*
