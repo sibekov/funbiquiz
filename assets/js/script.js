@@ -39,7 +39,8 @@ function myrunGame(mygameType) {
 
     }
     else if (newlist.length === 5 && counta > 0) {
-        alert(`Congratulations you have finish the ${charactor} level please try any other level`);
+        alert(`Congratulations you have finished the ${charactor} level !!!! `);
+        winner();
     }
     else {
         let operand = mylist.pop();
@@ -76,6 +77,7 @@ function mycheckAnswer() {
     if (isCorrect) {
         alert("That is correct!!!...You Have Good Bible Study Habits!");
         myincreaseScore();
+        newlist.unshift(myAnswer[2]);
     }
     else {
         alert(`Sorry... you said ${myuserAnswer}.  But the correct answer is ${myAnswer[1]}`);
@@ -99,88 +101,88 @@ function myworkedoutAnswer() {
     let operand = document.getElementById('myoperand').innerText;
 
     if (charactor === 'Jesus' && operand === 'water?') {
-        newlist.unshift(operand);
-        return [charactor, 'walk over it!'];
+
+        return [charactor, 'walk over it!', operand];
     }
     else if (charactor === 'Jesus' && operand === 'a rock?') {
-        newlist.unshift(operand);
-        return [charactor, 'build a mension on it!'];
+
+        return [charactor, 'build a mension on it!', operand];
     }
     else if (charactor === 'Jesus' && operand === 'a tree?') {
-        newlist.unshift(operand);
-        return [charactor, 'curse it!'];
+
+        return [charactor, 'curse it!', , operand];
     }
     else if (charactor === 'Jesus' && operand === 'a fish?') {
-        newlist.unshift(operand);
-        return [charactor, 'do a multiplication!'];
+
+        return [charactor, 'do a multiplication!', operand];
     }
     else if (charactor === 'Jesus' && operand === 'fire?') {
-        newlist.unshift(operand);
-        return [charactor, "set it on his friends\'s heads!"];
+
+        return [charactor, "set it on his friends\'s heads!", operand];
     }
 
     else if (charactor === 'Jona' && operand === 'water?') {
-        newlist.unshift(operand);
-        return [charactor, 'deep dive into it'];
+
+        return [charactor, 'deep dive into it', operand];
     }
     else if (charactor === 'Jona' && operand === 'a rock?') {
-        newlist.unshift(operand);
-        return [charactor, 'sit and wait for a movie to start'];
+
+        return [charactor, 'sit and wait for a movie to start', operand];
     }
     else if (charactor === 'Jona' && operand === 'a tree?') {
-        newlist.unshift(operand);
-        return [charactor, 'lie down under its shadow'];
+
+        return [charactor, 'lie down under its shadow', operand];
     }
     else if (charactor === 'Jona' && operand === 'a fish?') {
-        newlist.unshift(operand);
-        return [charactor, 'submarine!'];
+
+        return [charactor, 'submarine!', operand];
     }
     else if (charactor === 'Jona' && operand === 'fire?') {
-        newlist.unshift(operand);
-        return [charactor, 'try to burn others those who frustrated him'];
+
+        return [charactor, 'try to burn others those who frustrated him', operand];
     }
 
 
     else if (charactor === 'Elijah' && operand === 'water?') {
-        newlist.unshift(operand);
-        return [charactor, 'season it!'];
+
+        return [charactor, 'season it!', operand];
     }
     else if (charactor === 'Elijah' && operand === 'a rock?') {
-        newlist.unshift(operand);
-        return [charactor, 'hide in it'];
+
+        return [charactor, 'hide in it', operand];
     }
     else if (charactor === 'Elijah' && operand === 'a tree?') {
-        newlist.unshift(operand);
-        return [charactor, 'overnight stay'];
+
+        return [charactor, 'overnight stay', operand];
     }
     else if (charactor === 'Elijah' && operand === 'a fish?') {
-        newlist.unshift(operand);
-        return [charactor, 'three year diet'];
+
+        return [charactor, 'three year diet', operand];
     }
     else if (charactor === 'Elijah' && operand === 'fire?') {
-        newlist.unshift(operand);
-        return [charactor, 'start a barbacue'];
+
+        return [charactor, 'start a barbacue', operand];
     }
 
     else if (charactor === 'Moses' && operand === 'water?') {
-        newlist.unshift(operand);
-        return [charactor, 'divide by Two'];
+
+        return [charactor, 'divide by Two', operand];
     }
     else if (charactor === 'Moses' && operand === 'a rock?') {
-        newlist.unshift(operand);
-        return [charactor, 'strike it'];
+
+        return [charactor, 'strike it', operand];
     }
     else if (charactor === 'Moses' && operand === 'a tree?') {
-        newlist.unshift(operand);
-        return [charactor, 'take of his shoes'];
+
+        return [charactor, 'take of his shoes', operand];
     }
     else if (charactor === 'Moses' && operand === 'a fish?') {
-        newlist.unshift(operand);
-        return [charactor, 'make sure it is not eel before eating'];
+
+        return [charactor, 'make sure it is not eel before eating', operand];
     }
     else if (charactor === 'Moses' && operand === 'fire?') {
-        newlist.unshift(operand);
-        return [charactor, 'listen attentively'];
+
+        return [charactor, 'listen attentively', operand];
     }
 
     else {
@@ -241,7 +243,14 @@ function mycounter() {
 }
 
 
+function winner() {
+    document.getElementById("gameoverdiv").style.backgroundColor = "green";
+    document.getElementById("gameoverdiv").style.color = "yellow";
+    document.getElementById("gameoverdiv").innerHTML = "!!!! Congratulations You Have Finished the Level!!!";
 
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button => button.disabled = true);
+}
 
 
 function mygameover() {
